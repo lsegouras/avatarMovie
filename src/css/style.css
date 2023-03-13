@@ -1,0 +1,130 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+    
+}
+
+main:after{
+    content: '';
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.08441558441558439) 70%, rgba(28,28,28,1) 93%);
+    z-index: -1;
+
+}
+
+.content{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+}
+
+.info .description{
+    width: 70%;
+    font-size: 1em;
+    /* alterar para black depois */
+    color: #ffffff;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 50px;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    /* margin-top: 130px; */
+    
+}
+
+.btn-carousel{
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    /* gap => espaçamento entre elementos  */
+    margin-bottom: 120px;
+
+}
+
+.btn-carousel .btn{
+    background-color: #ffffff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-color: #ffffff;
+}
+
+.btn-carousel .btn.selected{
+    background-color: #231f22;
+}
+
+.side-menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.side-menu .icon{
+    width: 30px;
+    filter: invert(1);
+    transition: 0.3s ease-in-out;
+}
+
+.side-menu .icon:hover{
+    transform: scale(1.2);
+}
+
+.side-menu ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+}
+
+.carousel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* z-index: posiciona a figura por cima (1) ou por trás do restante (-1) */
+    z-index: -1;
+}
+
+.carousel .img{
+    width: 100%;
+    height: 100vh;
+    /* cover não distorce a imagem */
+    object-fit: cover;
+    display: none; 
+    animation: changeImg 0.7s;
+}
+
+.carousel .img.active{
+    display: block;
+}
+
+@keyframes changeImg{
+    from{
+        opacity: 0.85;
+    }
+    to{
+        opacity: 1;
+    }
+} 
